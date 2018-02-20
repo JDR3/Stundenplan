@@ -6,40 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+public class SliderActivity extends AppCompatActivity {
 
-public class MainActivity extends AppCompatActivity {
-
-    //Okanhatnkleinen
-// test banane syso
-    //PUSHSHSSHHS
-    //i<3 git hub
-
-  Button btnSlider;
-
-
-
-
-
-
+    Button btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_slider);
 
-        btnSlider = (Button) findViewById(R.id.btSlider1);
-        btnSlider.setOnClickListener(new View.OnClickListener() {
+
+
+        btnBack = (Button) findViewById(R.id.button6);
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,SliderActivity.class);
+                Intent intent = new Intent(SliderActivity.this,MainActivity.class);
                 startActivity(intent);
             }
         });
     }
 
 
-
-
-
-
 }
+

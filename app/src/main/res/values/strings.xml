@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Stundenplan</string>
+    <string name="montag">Mo</string>
+    <string name="dienstag">Di</string>
+    <string name="mittwoch">Mi</string>
+    <string name="donnerstag">Do</string>
+    <string name="freitag">Fr</string>
+    <string name="stunde1">1</string>
+    <string name="stunde2">2</string>
+    <string name="stunde3">3</string>
+    <string name="stunde4">4</string>
+    <string name="stunde5">5</string>
+    <string name="stunde6">6</string>
+    <string name="stunde7">7</string>
+    <string name="stunde8">8</string>
+    <string name="stunde9">9</string>
+    <string name="stunde10">10</string>
 </resources>

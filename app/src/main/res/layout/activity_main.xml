@@ -368,7 +368,7 @@
             <Button
                 android:id="@+id/buttonFreitag10"
                 android:layout_width="40dp"
-                />
+                android:text="Slider" />
         </TableRow>
 
     </TableLayout>

@@ -15,6 +15,12 @@
     <string name="stunde8">8</string>
     <string name="stunde9">9</string>
     <string name="stunde10">10</string>
+    <string name="title_activity_slider_activity">SliderActivityActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 
 </resources>

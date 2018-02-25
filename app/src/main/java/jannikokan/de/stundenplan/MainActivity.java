@@ -27,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSlider = (Button) findViewById(R.id.btSlider1);
+       btnSlider = (Button) findViewById(R.id.buttonFreitag10);
         btnSlider.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,SliderActivity.class);
-                startActivity(intent);
-            }
-        });
+           @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(MainActivity.this,SliderActivityActivity.class);
+               startActivity(intent);
+           }
+       });
     }
 
 

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     //i<3 git hub
 
   Button btnSlider;
+  Button buttonFachErstellen;
 
 
 
@@ -35,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
                startActivity(intent);
            }
        });
+
+       buttonFachErstellen = (Button) findViewById(R.id.buttonDonnerstag10);
+        buttonFachErstellen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,FachErstellen.class);
+                startActivity(i);
+            }
+        });
+
+
     }
 
 

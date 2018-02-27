@@ -22,5 +22,15 @@
 
     <string name="action_settings">Settings</string>
 
+    //Fach Erstellen Activity
+    <string name="fach">Fach:</string>
+    <string name="kuerzel">Kürzel:</string>
+    <string name="raum">Raum:</string>
+    <string name="lehrer">Lehrer:</string>
+    <string name="speichern">Speichern</string>
+    <string name="abbrechen">Abbrechen</string>
+    <string name="fachHinzufuegen">Fach hinzufügen</string>
+    <string name="fachErstellen">Fach erstellen</string>
+
 
 </resources>

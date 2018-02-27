@@ -20,6 +20,7 @@
             android:name=".SliderActivityActivity"
             android:label="@string/title_activity_slider_activity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

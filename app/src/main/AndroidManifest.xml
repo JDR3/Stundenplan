@@ -20,7 +20,8 @@
             android:name=".SliderActivityActivity"
             android:label="@string/title_activity_slider_activity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".FachErstellen"></activity>
+        <activity android:name=".FachErstellen" />
+        <activity android:name=".SliderActivity"></activity>
     </application>
 
 </manifest>

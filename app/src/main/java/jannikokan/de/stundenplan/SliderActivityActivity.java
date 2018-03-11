@@ -98,4 +98,6 @@ public class SliderActivityActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
 }

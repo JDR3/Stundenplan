@@ -10,21 +10,24 @@
         android:id="@+id/editTextLehrer"
         android:layout_width="238dp"
         android:layout_height="17dp"
-        tools:layout_editor_absoluteX="83dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="148dp" />
 
     <EditText
         android:id="@+id/editTextRaum"
         android:layout_width="238dp"
         android:layout_height="17dp"
-        tools:layout_editor_absoluteX="83dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="103dp" />
 
     <EditText
         android:id="@+id/editTextKuerzel"
         android:layout_width="238dp"
         android:layout_height="17dp"
-        tools:layout_editor_absoluteX="83dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="58dp" />
 
     <TextView
@@ -62,24 +65,30 @@
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+
+        android:layout_marginStart="8dp"
         android:text="@string/speichern"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/abbrechen"
-        tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="253dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/editTextFach"
         android:layout_width="238dp"
         android:layout_height="17dp"
-        tools:layout_editor_absoluteX="83dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView

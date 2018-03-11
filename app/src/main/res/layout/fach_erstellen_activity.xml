@@ -9,129 +9,94 @@
     <EditText
         android:id="@+id/editTextLehrer"
         android:layout_width="238dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRaum" />
+        android:layout_height="17dp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="148dp" />
 
     <EditText
         android:id="@+id/editTextRaum"
         android:layout_width="238dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextKuerzel" />
+        android:layout_height="17dp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="103dp" />
 
     <EditText
         android:id="@+id/editTextKuerzel"
         android:layout_width="238dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextFach" />
+        android:layout_height="17dp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="58dp" />
 
     <TextView
         android:id="@+id/textViewFach"
         android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
         android:text="@string/fach"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/textViewKuerzel"
         android:layout_width="wrap_content"
-        android:layout_height="29dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
         android:text="@string/kuerzel"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFach" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="58dp" />
 
     <TextView
         android:id="@+id/textViewRaum"
         android:layout_width="wrap_content"
-        android:layout_height="24dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
         android:text="@string/raum"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewKuerzel" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="103dp" />
 
     <TextView
         android:id="@+id/textViewLehrer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:text="@string/lehrer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewRaum" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="148dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
         android:text="@string/speichern"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="253dp" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:text="@string/abbrechen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        tools:layout_editor_absoluteX="217dp"
+        tools:layout_editor_absoluteY="253dp" />
 
     <EditText
         android:id="@+id/editTextFach"
         android:layout_width="238dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="17dp"
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/textViewFarbe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
         android:text="Farbe:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLehrer" />
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="194dp" />
 
     <Button
         android:id="@+id/buttonFarbe"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="+"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextLehrer" />
+        tools:layout_editor_absoluteX="83dp"
+        tools:layout_editor_absoluteY="185dp" />
 
 
 </android.support.constraint.ConstraintLayout>

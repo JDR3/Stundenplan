@@ -9,11 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Okanhatnkleinen
-// test banane syso
-    //PUSHSHSSHHS
-    //i<3 git hub
-
+  DatabaseHelper myDb;
   Button btnSlider;
   Button buttonFachErstellen;
 
@@ -27,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        myDb = new DatabaseHelper(this);
+
 
        btnSlider = (Button) findViewById(R.id.buttonFreitag10);
         btnSlider.setOnClickListener(new View.OnClickListener() {

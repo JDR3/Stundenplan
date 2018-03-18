@@ -83,20 +83,22 @@
         app:layout_constraintVertical_bias="0.224" />
 
 
-
     <TextView
         android:id="@+id/textViewRaum"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="168dp"
         android:text="@string/raum"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textViewLehrer"
+        android:id="@+id/textViewLehrerMail"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -110,7 +112,7 @@
         app:layout_constraintVertical_bias="0.47" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btSpLehrer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -123,7 +125,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btAbrLehrer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -134,12 +136,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.732"
-        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toEndOf="@+id/btSpLehrer"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751" />
 
     <EditText
-        android:id="@+id/editTextFach"
+        android:id="@+id/editTextLehrerName"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"

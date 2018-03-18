@@ -4,35 +4,31 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
+        <item android:title="">
+
+        </item>
+
+        <item android:title="Menu">
+        </item>
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_stundenplan"
+            android:icon="@drawable/ic_menu_stundenplan"
             android:title="Stundenplan" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:id="@+id/nav_faecher"
+            android:icon="@drawable/ic_menu_faecher"
             android:title="Fächer" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Notizen" />
+            android:id="@+id/nav_lehrer"
+            android:icon="@drawable/ic_menu_lehrer"
+            android:title="Lehrer" />
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Kalender" />
+            android:id="@+id/nav_notizen"
+            android:icon="@drawable/ic_menu_notizen"
+            android:title="Notizen" />
     </group>
 
-    <item android:title="Sonstiges">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Über uns" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Erfahre mehr" />
-        </menu>
-    </item>
+
 
 </menu>

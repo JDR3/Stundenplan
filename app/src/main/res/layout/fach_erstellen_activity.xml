@@ -7,7 +7,7 @@
     tools:layout_editor_absoluteY="81dp">
 
     <EditText
-        android:id="@+id/editTextLehrer"
+        android:id="@+id/editTextFachLehrer"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.47" />
 
     <EditText
-        android:id="@+id/editTextRaum"
+        android:id="@+id/editTextFachRaum"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -39,7 +39,7 @@
         app:layout_constraintVertical_bias="0.34" />
 
     <EditText
-        android:id="@+id/editTextKuerzel"
+        android:id="@+id/editTextFachKuerzel"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -112,7 +112,7 @@
         app:layout_constraintVertical_bias="0.47" />
 
     <Button
-        android:id="@+id/btSpLehrer"
+        android:id="@+id/buttonFachSpeichern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -125,7 +125,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <Button
-        android:id="@+id/btAbrLehrer"
+        android:id="@+id/buttonFachAbbrechen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -141,7 +141,7 @@
         app:layout_constraintVertical_bias="0.751" />
 
     <EditText
-        android:id="@+id/editTextLehrerName"
+        android:id="@+id/editTextFachName"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".SliderActivityActivity"
             android:label="@string/title_activity_slider_activity"
@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FachErstellen" />
-        <activity android:name=".LehrerErstellen"></activity>
+        <activity android:name=".LehrerErstellen" />
+        <activity android:name=".DatabaseHalper2"></activity>
     </application>
 
 </manifest>

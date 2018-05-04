@@ -28,6 +28,12 @@ public class FachErstellen extends AppCompatActivity {
     Button buttonFachSpeichern;
     Button buttonFaecherAnzeigen;
 
+
+
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

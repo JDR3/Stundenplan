@@ -22,7 +22,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_6 = "FACHFARBE";
 
 
-
+    public static final String TABLE_NAME2 = "Lehrer_table";
+    public static final String COL_7 = "ID_LEHRER"
+    public static final String COL_8 = "LEHRERNAME";
+    public static final String COL_9 = "LEHRERKUERZEL";
+    public static final String COL_10 = "LEHRERRAUM";
+    public static final String COL_11 = "LEHRERMAIL";
 
 
 

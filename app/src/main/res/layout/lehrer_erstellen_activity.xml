@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.34" />
 
     <EditText
-        android:id="@+id/editTextKuerzel"
+        android:id="@+id/editTextLehrerKuerzel"
         android:layout_width="238dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.47" />
 
     <Button
-        android:id="@+id/btSpLehrer"
+        android:id="@+id/buttonLehrerSpeichern"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -137,7 +137,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.732"
-        app:layout_constraintStart_toEndOf="@+id/btSpLehrer"
+        app:layout_constraintStart_toEndOf="@+id/buttonLehrerSpeichern"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.751" />
 
@@ -157,19 +157,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.101" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <Button
+        android:id="@+id/buttonLehrerAnzeigen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Lehrer Anzeigen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="147dp" />
 
 
 </android.support.constraint.ConstraintLayout>

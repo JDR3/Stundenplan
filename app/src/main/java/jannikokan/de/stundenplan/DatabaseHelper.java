@@ -14,12 +14,12 @@ import android.util.Log;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Stundenplan.db";
-    public static final String TABLE_NAME = "Fach_table";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "FACHNAME";
-    public static final String COL_3 = "FACHKUERZEL";
-    public static final String COL_4 = "FACHRAUM";
-    public static final String COL_5 = "FACHLEHRER";
+    public static final String TABLE_FACH = "Fach_table";
+    public static final String COL_ID = "ID_F";
+    public static final String FACHNAME = "FACHNAME";
+    public static final String FACHKUERZEL = "FACHKUERZEL";
+    public static final String FACHRAUM = "FACHRAUM";
+    public static final String FACHLEHRER = "FACHLEHRER";
     public static final String COL_6 = "FACHFARBE";
     public static final String TABLE_LEHRER = "Lehrer_table";
     public static final String LEHRERID = "ID_L";
@@ -31,8 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +"INTEGER PRIMARY KEY," + LEHRERNAME +"TEXT," + LEHRERKUERZEL + "TEXT,"+ LEHRERRAUM + "TEXT," + LEHRERMAIL + "TEXT)";
-private static final String create_Table =  "create table " + TABLE_NAME + "("+COL_1+ "INTEGER PRIMARY KEY," + COL_2 +"TEXT," + COL_3+ " TEXT,"+  COL_4+ "TEXT," + COL_5+ " TEXT)";
+private static final String create_Table_Lehrer = "create table " + TABLE_LEHRER + "("+ LEHRERID +"INTEGER PRIMARY KEY AUTOINCREMENT," + LEHRERNAME +"TEXT," + LEHRERKUERZEL + "TEXT,"+ LEHRERRAUM + "TEXT," + LEHRERMAIL + "TEXT)";
+private static final String create_Table_Fach =  "create table " + TABLE_FACH + "("+ COL_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + FACHNAME +"TEXT," + FACHKUERZEL + " TEXT,"+ FACHRAUM + "TEXT," + FACHLEHRER + " TEXT)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -43,11 +43,13 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        Log.d("MeineAPP", "Tabelle angelegt");
-      //  db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
-        db.execSQL(create_Table);
-        db.execSQL(create_Table2);
 
+       db.execSQL("create table " + TABLE_FACH + "(ID_F INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
+        db.execSQL("create table " + TABLE_LEHRER + "(ID_L INTEGER PRIMARY KEY AUTOINCREMENT, LEHRERNAME TEXT, LEHRERKUERZEL TEXT, LEHRERRAUM TEXT, LEHRERMAIL TEXT)");
+
+      //  db.execSQL(create_Table_Fach + create_Table_Lehrer);
+       // db.execSQL();
+        Log.d("MeineAPP", "Tabelle angelegt");
     }
 
 
@@ -58,7 +60,7 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
 
 
        // db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME );
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_FACH);
         db.execSQL( "DROP TABLE IF EXISTS " + TABLE_LEHRER);
 
         onCreate(db);
@@ -67,51 +69,64 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
     }
 
     public boolean speichereFach(String fachName, String fachKuerzel, String fachRaum, String fachLehrer){
+        Log.d("MeineAPP", "--> speichereFach");
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, fachName);
-        contentValues.put(COL_3, fachKuerzel);
-        contentValues.put(COL_4, fachRaum);
-        contentValues.put(COL_5, fachLehrer);
-        long result = db.insert(TABLE_NAME, null, contentValues);
+        contentValues.put(FACHNAME, fachName);
 
+        contentValues.put(FACHKUERZEL, fachKuerzel);
+        contentValues.put(FACHRAUM, fachRaum);
+        contentValues.put(FACHLEHRER, fachLehrer);
+
+        long result = db.insert(TABLE_FACH, null, contentValues);
+
+        boolean retval;
         if (result == -1){
-            return  false;
+            retval =  false;
         }
         else {
-            return  true;
+            retval = true;
         }
+        Log.d("MeineAPP", "<-- speichereFach: " + retval);
+        return retval;
     }
 
     public Cursor zeigeFaecher(){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select *from "+TABLE_NAME,null);
+        Cursor res = db.rawQuery("select *from " + TABLE_FACH,null);
         return res;
     }
 
 
     public boolean speicherLehrer(String lehrerName, String lehrerKuerzel, String lehrerRaum, String lehrerMail){
+        Log.d("MeineAPP", "in Methode Speichere Lehrer");
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(LEHRERNAME, lehrerName);
         contentValues.put(LEHRERKUERZEL, lehrerKuerzel);
         contentValues.put(LEHRERRAUM, lehrerRaum);
         contentValues.put(LEHRERMAIL, lehrerMail);
-       long result = db.insert(TABLE_LEHRER, null, contentValues);
+        Log.d("MeineAPP", "Lehrername " + lehrerName + "LehrerKürzel"+lehrerKuerzel + "Lehrerraum:"+lehrerRaum + "Lehrermail:"+lehrerMail);
+        long result = db.insert(TABLE_LEHRER, null, contentValues);
+
+        boolean retval;
         if (result == -1){
-            return  false;
+            retval= false;
+
         }
         else {
-            return  true;
+            retval = true;
         }
 
+        Log.d("MeineAPP", "aus Methode Speichere Lehrer"+retval);
+        return retval;
     }
 
 
     public Cursor zeigeLehrer(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select *from "+ TABLE_LEHRER,null);
+        Cursor res = db.rawQuery("select * from "+ TABLE_LEHRER,null);
         return res;
     }
 

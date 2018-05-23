@@ -27,6 +27,7 @@ public class FachErstellen extends AppCompatActivity {
     EditText editTextFachLehrer;
     Button buttonFachSpeichern;
     Button buttonFaecherAnzeigen;
+    Button buttonFachBearbeiten;
 
 
 
@@ -46,8 +47,10 @@ public class FachErstellen extends AppCompatActivity {
         editTextFachLehrer = (EditText) findViewById(R.id.editTextFachLehrer);
         buttonFachSpeichern = (Button) findViewById(R.id.buttonFachSpeichern);
         buttonFaecherAnzeigen = (Button) findViewById(R.id.buttonFaecherAnzeigen);
+        buttonFachBearbeiten = (Button) findViewById(R.id.buttonFachBearbeiten);
         addFach();
         zeigeFaecher();
+
 
     }
 
@@ -102,6 +105,8 @@ public class FachErstellen extends AppCompatActivity {
         builder.show();
 
     }
+
+
 
 
 

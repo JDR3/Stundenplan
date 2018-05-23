@@ -15,12 +15,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "Stundenplan.db";
     public static final String TABLE_NAME = "Fach_table";
-    public static final String COL_1 = "ID";
-    public static final String COL_2 = "FACHNAME";
-    public static final String COL_3 = "FACHKUERZEL";
-    public static final String COL_4 = "FACHRAUM";
-    public static final String COL_5 = "FACHLEHRER";
-    public static final String COL_6 = "FACHFARBE";
+    public static final String FACH_ID = "ID";
+    public static final String FACH_NAME = "FACHNAME";
+    public static final String FACH_KUERZEL = "FACHKUERZEL";
+    public static final String FACH_RAUM = "FACHRAUM";
+    public static final String FACH_LEHRER = "FACHLEHRER";
+    public static final String FACH_FARBE = "FACHFARBE";
     public static final String TABLE_LEHRER = "Lehrer_table";
     public static final String LEHRERID = "ID_L";
     public static final String LEHRERNAME = "LEHRERNAME";
@@ -31,8 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +"INTEGER PRIMARY KEY," + LEHRERNAME +"TEXT," + LEHRERKUERZEL + "TEXT,"+ LEHRERRAUM + "TEXT," + LEHRERMAIL + "TEXT)";
-private static final String create_Table =  "create table " + TABLE_NAME + "("+COL_1+ "INTEGER PRIMARY KEY," + COL_2 +"TEXT," + COL_3+ " TEXT,"+  COL_4+ "TEXT," + COL_5+ " TEXT)";
+    private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +"INTEGER PRIMARY KEY," + LEHRERNAME +"TEXT," + LEHRERKUERZEL + "TEXT,"+ LEHRERRAUM + "TEXT," + LEHRERMAIL + "TEXT)";
+    private static final String create_Table =  "create table " + TABLE_NAME + "("+ FACH_ID + "INTEGER PRIMARY KEY," + FACH_NAME +"TEXT," + FACH_KUERZEL + " TEXT,"+ FACH_RAUM + "TEXT," + FACH_LEHRER + " TEXT)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -44,7 +44,7 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
     public void onCreate(SQLiteDatabase db) {
 
         Log.d("MeineAPP", "Tabelle angelegt");
-      //  db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
+        //  db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
         db.execSQL(create_Table);
         db.execSQL(create_Table2);
 
@@ -57,7 +57,7 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
 
-       // db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME );
+        // db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME );
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         db.execSQL( "DROP TABLE IF EXISTS " + TABLE_LEHRER);
 
@@ -69,10 +69,10 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
     public boolean speichereFach(String fachName, String fachKuerzel, String fachRaum, String fachLehrer){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, fachName);
-        contentValues.put(COL_3, fachKuerzel);
-        contentValues.put(COL_4, fachRaum);
-        contentValues.put(COL_5, fachLehrer);
+        contentValues.put(FACH_NAME, fachName);
+        contentValues.put(FACH_KUERZEL, fachKuerzel);
+        contentValues.put(FACH_RAUM, fachRaum);
+        contentValues.put(FACH_LEHRER, fachLehrer);
         long result = db.insert(TABLE_NAME, null, contentValues);
 
         if (result == -1){
@@ -98,7 +98,7 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
         contentValues.put(LEHRERKUERZEL, lehrerKuerzel);
         contentValues.put(LEHRERRAUM, lehrerRaum);
         contentValues.put(LEHRERMAIL, lehrerMail);
-       long result = db.insert(TABLE_LEHRER, null, contentValues);
+        long result = db.insert(TABLE_LEHRER, null, contentValues);
         if (result == -1){
             return  false;
         }
@@ -119,5 +119,4 @@ private static final String create_Table =  "create table " + TABLE_NAME + "("+C
 
 
 }
-
 

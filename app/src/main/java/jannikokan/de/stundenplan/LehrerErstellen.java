@@ -71,7 +71,7 @@ public class LehrerErstellen extends AppCompatActivity {
         buttonLehrerAnzeigen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Cursor res =myDb.zeigeLehrer();
+                Cursor res = myDb.zeigeLehrer();
                 if (res.getCount() == 0){
                     showToast("Fehler", "Keinen Lehrer gefunden");
                     return;

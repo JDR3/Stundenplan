@@ -192,7 +192,7 @@
         android:id="@+id/buttonFaecherAnzeigen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="48dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -200,16 +200,8 @@
         android:text="Fächer anzeigen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/buttonFachBearbeiten"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fach bearbeiten"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="419dp" />
 
 
 </android.support.constraint.ConstraintLayout>

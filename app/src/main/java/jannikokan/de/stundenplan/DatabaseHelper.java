@@ -66,6 +66,59 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //fuegeNeueTabllenHinzu() enthält die Tabellen, die erstellt werden müssen und die entsprechenden Strings zum erstellen der Tabelle.
+    public void fuegeNeueTabellenHinzu() {
+        String[] benoetigte_tabellen = new String[]{
+                TABLE_NAME,
+                TABLE_LEHRER
+        };
+
+        String[] table_create_statements = new String[] {
+                create_Table,
+                create_Table2
+        };
+        erstelleTabellenDieNichtExistieren(benoetigte_tabellen,table_create_statements);
+    }
+
+    //Diese Methode überprüft die Gültigkeit der Längen und wenn sie gültig sind, werden die create statements an die CheckeUndErstelleTabelle() Methode weitergegeben.
+    private void erstelleTabellenDieNichtExistieren(String[] benoetigte_tabellen, String[] table_create_statements) {
+
+        // Wenn keine keine Tabellen oder table create statements, dann beende
+        if (benoetigte_tabellen.length < 1 || table_create_statements.length < 1) {
+            return;
+        }
+        // Elemente in den Arrays müssen gleich sein
+        if (benoetigte_tabellen.length != table_create_statements.length) {
+            return;
+        }
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereclause = "name";
+        for (int i=0; i < benoetigte_tabellen.length;i++) {
+            if (benoetigte_tabellen[i].length() > 0 && table_create_statements[i].length() > 0) {
+                CheckeUndErstelleTabelle(
+                        benoetigte_tabellen[i].toString(),
+                        table_create_statements[i].toString()
+                );
+            }
+        }
+    }
+
+    //Diese Methode "befragt" den sqlite_master, ob die Tabelle existiert. Falls nicht, wird die Tabelle erstellt.
+    private void CheckeUndErstelleTabelle(String table, String create_statement) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String whereclause = "name=? AND type=?";
+        String[] whereargs = new String[]{table,"table"};
+        String table_to_query = "sqlite_master";
+        Cursor csr = db.query(table_to_query,null,whereclause,whereargs,null,null,null);
+        if (csr.getCount() < 1) {
+            db.execSQL(create_statement);
+        }
+        csr.close();
+    }
+
+
+
+
     public boolean speichereFach(String fachName, String fachKuerzel, String fachRaum, String fachLehrer){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -86,7 +139,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor zeigeFaecher(){
 
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select *from "+TABLE_NAME,null);
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
         return res;
     }
 
@@ -111,7 +164,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Cursor zeigeLehrer(){
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select *from "+ TABLE_LEHRER,null);
+        Cursor res = db.rawQuery("select * from "+ TABLE_LEHRER,null);
         return res;
     }
 

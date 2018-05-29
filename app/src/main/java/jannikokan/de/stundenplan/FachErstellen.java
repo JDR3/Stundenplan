@@ -41,13 +41,13 @@ public class FachErstellen extends AppCompatActivity {
         setContentView(R.layout.fach_erstellen_activity);
 
         myDb = new DatabaseHelper(this);
+        myDb.fuegeNeueTabellenHinzu();
         editTextFachName = (EditText) findViewById(R.id.editTextFachName);
         editTextFachKuerzel = (EditText) findViewById(R.id.editTextFachKuerzel);
         editTextFachRaum = (EditText) findViewById(R.id.editTextFachRaum);
         editTextFachLehrer = (EditText) findViewById(R.id.editTextFachLehrer);
         buttonFachSpeichern = (Button) findViewById(R.id.buttonFachSpeichern);
         buttonFaecherAnzeigen = (Button) findViewById(R.id.buttonFaecherAnzeigen);
-        buttonFachBearbeiten = (Button) findViewById(R.id.buttonFachBearbeiten);
         addFach();
         zeigeFaecher();
 

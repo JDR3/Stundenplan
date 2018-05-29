@@ -31,8 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +"INTEGER PRIMARY KEY," + LEHRERNAME +"TEXT," + LEHRERKUERZEL + "TEXT,"+ LEHRERRAUM + "TEXT," + LEHRERMAIL + "TEXT)";
-    private static final String create_Table =  "create table " + TABLE_NAME + "("+ FACH_ID + "INTEGER PRIMARY KEY," + FACH_NAME +"TEXT," + FACH_KUERZEL + " TEXT,"+ FACH_RAUM + "TEXT," + FACH_LEHRER + " TEXT)";
+    private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +"INTEGER PRIMARY KEY AUTOINCREMENT," + LEHRERNAME +"TEXT," + LEHRERKUERZEL + "TEXT,"+ LEHRERRAUM + "TEXT," + LEHRERMAIL + "TEXT)";
+    private static final String create_Table =  "create table " + TABLE_NAME + "("+ FACH_ID + "INTEGER PRIMARY KEY AUTOINCREMENT," + FACH_NAME +"TEXT," + FACH_KUERZEL + " TEXT,"+ FACH_RAUM + "TEXT," + FACH_LEHRER + " TEXT)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);

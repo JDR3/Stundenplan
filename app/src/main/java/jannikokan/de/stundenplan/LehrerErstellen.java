@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,14 +40,16 @@ public class LehrerErstellen extends AppCompatActivity {
         editTextLehrerMail = (EditText) findViewById(R.id.editTextLehrerMail);
         buttonLehrerSpeichern = (Button) findViewById(R.id.buttonLehrerSpeichern);
 
-        addLehrer();
-        zeigeLehrer();
+      addLehrer();
+       // zeigeLehrer();
 
     }
 
 
 
     public void addLehrer(){
+
+        Log.d("MeineAPP", "--> addLehrer");
         buttonLehrerSpeichern.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +57,8 @@ public class LehrerErstellen extends AppCompatActivity {
                         editTextLehrerKuerzel.getText().toString(),
                         editTextLehrerRaum.getText().toString(),
                         editTextLehrerMail.getText().toString());
-                if (istGespeichert==true){
+                Log.d("MeineAPP", "--> addLehrer");
+                if (istGespeichert  == true){
                     Toast.makeText(LehrerErstellen.this, "Lehrer wurde gespeichert.", Toast.LENGTH_LONG).show();
                 }
                 else {
@@ -69,6 +73,7 @@ public class LehrerErstellen extends AppCompatActivity {
 
 
     public void zeigeLehrer() {
+
         buttonLehrerAnzeigen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

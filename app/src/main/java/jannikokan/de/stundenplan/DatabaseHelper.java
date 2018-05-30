@@ -25,14 +25,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String LEHRERID = "ID_L";
     public static final String LEHRERNAME = "LEHRERNAME";
     public static final String LEHRERKUERZEL = "LEHRERKUERZEL";
-    public static final String LEHRER_RAUM = "LEHRERRAUM";
+    public static final String LEHRERRAUM = "LEHRERRAUM";
     public static final String LEHRERMAIL = "LEHRERMAIL";
 
 
 
 
-    private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID + "INTEGER PRIMARY KEY ," + LEHRERNAME + "TEXT," + LEHRERKUERZEL + "TEXT," + LEHRER_RAUM + "TEXT," + LEHRERMAIL + "TEXT)";
-    private static final String create_Table =  "create table " + TABLE_NAME + "("+ FACH_ID + "INTEGER PRIMARY KEY ," + FACH_NAME + "TEXT," + FACH_KUERZEL + " TEXT," + FACH_RAUM + "TEXT," + FACH_LEHRER + " TEXT)";
+    private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +" INTEGER PRIMARY KEY AUTOINCREMENT," + LEHRERNAME +" TEXT," + LEHRERKUERZEL + " TEXT,"+ LEHRERRAUM + " TEXT," + LEHRERMAIL + " TEXT)";
+    private static final String create_Table = "create table " + TABLE_NAME + "("+ FACH_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + FACH_NAME +" TEXT," + FACH_KUERZEL + " TEXT,"+ FACH_RAUM + " TEXT," + FACH_LEHRER + " TEXT)";
+
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -44,10 +45,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
 
         Log.d("MeineAPP", "Tabelle angelegt");
-        // db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
+        //  db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
         db.execSQL(create_Table);
         db.execSQL(create_Table2);
-     //  db.execSQL("create table Lehrer_table(ID_L INTEGER PRIMARY KEY AUTOINCREMENT,LEHRERNAMETEXT,LEHRERKUERZELTEXT,LEHRERRAUMTEXT,LEHRERMAILTEXT)");
 
     }
 
@@ -150,7 +150,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(LEHRERNAME, lehrerName);
         contentValues.put(LEHRERKUERZEL, lehrerKuerzel);
-        contentValues.put(LEHRER_RAUM, lehrerRaum);
+        contentValues.put(LEHRERRAUM, lehrerRaum);
         contentValues.put(LEHRERMAIL, lehrerMail);
         long result = db.insert(TABLE_LEHRER, null, contentValues);
         if (result == -1){

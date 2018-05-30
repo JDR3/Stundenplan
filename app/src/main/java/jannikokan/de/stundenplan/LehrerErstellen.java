@@ -39,9 +39,10 @@ public class LehrerErstellen extends AppCompatActivity {
         editTextLehrerRaum = (EditText) findViewById(R.id.editTextLehrerRaum);
         editTextLehrerMail = (EditText) findViewById(R.id.editTextLehrerMail);
         buttonLehrerSpeichern = (Button) findViewById(R.id.buttonLehrerSpeichern);
+        buttonLehrerAnzeigen = (Button) findViewById(R.id.buttonLehrerAnzeigen);
 
       addLehrer();
-       // zeigeLehrer();
+      zeigeLehrer();
 
     }
 

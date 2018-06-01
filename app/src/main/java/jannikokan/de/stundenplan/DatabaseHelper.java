@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by Jannik on 14.03.2018.
  */
@@ -137,12 +140,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor zeigeFaecher(){
 
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
-        return res;
-    }
+
+
 
 
     public boolean speicherLehrer(String lehrerName, String lehrerKuerzel, String lehrerRaum, String lehrerMail){

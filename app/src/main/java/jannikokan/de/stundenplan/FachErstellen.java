@@ -1,5 +1,6 @@
 package jannikokan.de.stundenplan;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.Message;
@@ -34,20 +35,24 @@ public class FachErstellen extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fach_erstellen_activity);
 
         myDb = new DatabaseHelper(this);
+        myDb.fuegeNeueTabellenHinzu();
         editTextFachName = (EditText) findViewById(R.id.editTextFachName);
         editTextFachKuerzel = (EditText) findViewById(R.id.editTextFachKuerzel);
         editTextFachRaum = (EditText) findViewById(R.id.editTextFachRaum);
         editTextFachLehrer = (EditText) findViewById(R.id.editTextFachLehrer);
         buttonFachSpeichern = (Button) findViewById(R.id.buttonFachSpeichern);
         buttonFaecherAnzeigen = (Button) findViewById(R.id.buttonFaecherAnzeigen);
+
         addFach();
         zeigeFaecher();
+
 
     }
 
@@ -102,6 +107,9 @@ public class FachErstellen extends AppCompatActivity {
         builder.show();
 
     }
+
+
+
 
 
 

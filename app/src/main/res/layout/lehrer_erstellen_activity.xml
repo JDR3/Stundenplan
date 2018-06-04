@@ -161,10 +161,9 @@
         android:id="@+id/buttonLehrerAnzeigen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:text="Lehrer Anzeigen"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="147dp" />
+        tools:layout_editor_absoluteX="119dp"
+        tools:layout_editor_absoluteY="447dp" />
 
 
 </android.support.constraint.ConstraintLayout>

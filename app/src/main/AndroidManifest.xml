@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".FachErstellen" />
         <activity android:name=".LehrerErstellen" />
-        <activity android:name=".DatabaseHalper2"></activity>
+        <activity android:name=".DatabaseHelper" />
     </application>
 
 </manifest>

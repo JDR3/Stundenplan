@@ -24,9 +24,9 @@
             android:icon="@drawable/ic_menu_lehrer"
             android:title="Lehrer" />
         <item
-            android:id="@+id/nav_notizen"
+            android:id="@+id/nav_raeume"
             android:icon="@drawable/ic_menu_notizen"
-            android:title="Notizen" />
+            android:title="Räume" />
     </group>
 
 

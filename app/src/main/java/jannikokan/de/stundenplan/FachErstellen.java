@@ -94,6 +94,7 @@ public class FachErstellen extends AppCompatActivity {
                     buffer.append("Lehrer: " + res.getString(4)+"\n\n");
                 }
 
+
                 zeigeNachricht("Fächer", buffer.toString());
             }
         });

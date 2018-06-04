@@ -30,13 +30,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String LEHRERKUERZEL = "LEHRERKUERZEL";
     public static final String LEHRERRAUM = "LEHRERRAUM";
     public static final String LEHRERMAIL = "LEHRERMAIL";
-
+    public static final String TABLE_RAUM = "Raum_table";
+    public static final String RAUM_ID = "ID_RAUM";
+    public static final String RAUM_NUMMER = "RAUMNUMMER";
+    public static final String RAUM_ART = "RAUMART";
 
 
 
     private static final String create_Table2 = "create table " + TABLE_LEHRER + "("+ LEHRERID +" INTEGER PRIMARY KEY AUTOINCREMENT," + LEHRERNAME +" TEXT," + LEHRERKUERZEL + " TEXT,"+ LEHRERRAUM + " TEXT," + LEHRERMAIL + " TEXT)";
     private static final String create_Table = "create table " + TABLE_NAME + "("+ FACH_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + FACH_NAME +" TEXT," + FACH_KUERZEL + " TEXT,"+ FACH_RAUM + " TEXT," + FACH_LEHRER + " TEXT)";
-
+    private static final String create_TableRaum = "create table " + TABLE_RAUM + "("+  RAUM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + RAUM_NUMMER +" TEXT," + RAUM_ART + " TEXT)";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -51,6 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //  db.execSQL("create table " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, FACHNAME TEXT, FACHKUERZEL TEXT, FACHRAUM TEXT, FACHLEHRER TEXT)");
         db.execSQL(create_Table);
         db.execSQL(create_Table2);
+        db.execSQL(create_TableRaum);
 
     }
 
@@ -61,10 +65,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
 
 
-        // db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME );
+
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         db.execSQL( "DROP TABLE IF EXISTS " + TABLE_LEHRER);
-
+        db.execSQL( "DROP TABLE IF EXISTS " + TABLE_RAUM);
         onCreate(db);
         Log.d("MeineAPP", "in upgrade");
 
@@ -74,12 +78,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void fuegeNeueTabellenHinzu() {
         String[] benoetigte_tabellen = new String[]{
                 TABLE_NAME,
-                TABLE_LEHRER
+                TABLE_LEHRER,
+                TABLE_RAUM
         };
 
         String[] table_create_statements = new String[] {
                 create_Table,
-                create_Table2
+                create_Table2,
+                create_TableRaum
         };
         erstelleTabellenDieNichtExistieren(benoetigte_tabellen,table_create_statements);
     }
@@ -140,9 +146,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+    public boolean speichereRaum(String raumNummer, String raumArt){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(RAUM_NUMMER, raumNummer);
+        contentValues.put(RAUM_ART, raumArt);
 
+        long result = db.insert(TABLE_RAUM, null, contentValues);
 
-
+        if (result == -1){
+            return  false;
+        }
+        else {
+            return  true;
+        }
+    }
 
 
     public boolean speicherLehrer(String lehrerName, String lehrerKuerzel, String lehrerRaum, String lehrerMail){
@@ -171,6 +189,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
+    public Cursor zeigeFaecher(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ TABLE_NAME,null);
+        return res;
+    }
+
+    public Cursor zeigeRaeume(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from "+ TABLE_RAUM,null);
+        return res;
+    }
 
 
 

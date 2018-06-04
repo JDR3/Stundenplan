@@ -102,8 +102,9 @@ public class SliderActivityActivity extends AppCompatActivity
         } else if (id == R.id.nav_lehrer) {
             Intent i = new Intent(SliderActivityActivity.this, LehrerErstellen.class);
             startActivity(i);
-        } else if (id == R.id.nav_notizen) {
-
+        } else if (id == R.id.nav_raeume) {
+            Intent i = new Intent(SliderActivityActivity.this, RaumErstellen.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -23,6 +23,7 @@
         <activity android:name=".FachErstellen" />
         <activity android:name=".LehrerErstellen" />
         <activity android:name=".DatabaseHelper" />
+        <activity android:name=".RaumErstellen"></activity>
     </application>
 
 </manifest>

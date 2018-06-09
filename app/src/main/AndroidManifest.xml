@@ -24,6 +24,7 @@
         <activity android:name=".LehrerErstellen" />
         <activity android:name=".DatabaseHelper" />
         <activity android:name=".RaumErstellen"></activity>
+        <activity android:name=".ZeigeFaecherListe"></activity>
     </application>
 
 </manifest>

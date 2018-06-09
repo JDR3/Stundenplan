@@ -75,7 +75,7 @@ public class FachErstellen extends AppCompatActivity {
 
     }
 
-    public void zeigeFaecher(){
+    /*public void zeigeFaecher(){
         buttonFaecherAnzeigen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +96,16 @@ public class FachErstellen extends AppCompatActivity {
 
 
                 zeigeNachricht("Fächer", buffer.toString());
+            }
+        });
+    }*/
+
+    public void zeigeFaecher(){
+        buttonFaecherAnzeigen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(FachErstellen.this,ZeigeFaecherListe.class);
+                startActivity(intent);
             }
         });
     }

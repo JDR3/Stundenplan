@@ -7,9 +7,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
 /**
  * Created by Jannik on 14.03.2018.
  */
@@ -199,6 +196,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ TABLE_RAUM,null);
         return res;
+    }
+
+    public int loescheFach(int position){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("Fach_table","FACHID=?", new String[]{String.valueOf(position)});
     }
 
 

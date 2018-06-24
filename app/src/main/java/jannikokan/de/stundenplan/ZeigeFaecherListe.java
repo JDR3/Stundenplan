@@ -27,6 +27,7 @@ public class ZeigeFaecherListe extends AppCompatActivity {
     Cursor res;
     ListView listViewFaecher;
     private AlertDialog.Builder build;
+    ArrayList<String> faecherListe = new ArrayList<>();
 
 
     @Override
@@ -36,24 +37,10 @@ public class ZeigeFaecherListe extends AppCompatActivity {
 
 
         myDb = new DatabaseHelper(this);
-        ListView listViewFaecher = (ListView) findViewById(R.id.listViewFaecher);
-
-        final ArrayList<String> faecherListe = new ArrayList<>();
-        res = myDb.zeigeFaecher();
+        listViewFaecher = (ListView) findViewById(R.id.listViewFaecher);
 
 
-
-
-
-        if (res.getCount() == 0){
-            Toast.makeText(ZeigeFaecherListe.this, "Keine Fächer gefunden", Toast.LENGTH_LONG).show();
-        } else {
-            while (res.moveToNext()){
-                faecherListe.add(res.getString(1));
-                ListAdapter fachListAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, faecherListe);
-                listViewFaecher.setAdapter(fachListAdapter);
-            }
-        }
+        zeigeListe();
 
         listViewFaecher.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
@@ -71,17 +58,23 @@ public class ZeigeFaecherListe extends AppCompatActivity {
 
                 build.setPositiveButton("Löschen", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        myDb.loescheFach(position);
+
+                        res.moveToPosition(position);
+// myDb.loescheFach(res.getString(1));
+                        myDb.loescheFach(res.getLong(0));
 
                         Toast.makeText(getApplicationContext(), faecherListe.get(position) + " gelöscht.", Toast.LENGTH_LONG).show();
                         myDb.zeigeFaecher();
                         dialogInterface.cancel();
+                        zeigeListe();
+
                     }
                 });
 
                 AlertDialog alert = build.create();
                 alert.show();
-            return true;
+
+                return true;
             }
         });
 
@@ -90,4 +83,25 @@ public class ZeigeFaecherListe extends AppCompatActivity {
 
 
     }
+
+    public void zeigeListe(){
+
+        res = myDb.zeigeFaecher();
+        faecherListe.clear();
+        if (res.getCount() == 0){
+            Toast.makeText(ZeigeFaecherListe.this, "Keine Fächer gefunden", Toast.LENGTH_LONG).show();
+        } else {
+            while (res.moveToNext()){
+                faecherListe.add(res.getString(1));
+
+            }
+            ListAdapter fachListAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, faecherListe);
+            listViewFaecher.setAdapter(fachListAdapter);
+        }
+
+
+
+    }
+
 }
+

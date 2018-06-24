@@ -198,9 +198,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
-    public int loescheFach(int position){
+    public int loescheFach(String fach) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("Fach_table","FACHID=?", new String[]{String.valueOf(position)});
+        return db.delete(TABLE_NAME, FACH_NAME+"=?", new String[]{fach});
+
+    }
+
+    public int loescheFach(long id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, FACH_ID+"=?", new String[]{String.valueOf(id)});
+
     }
 
 

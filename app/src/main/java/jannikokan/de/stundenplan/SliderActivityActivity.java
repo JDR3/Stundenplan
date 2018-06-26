@@ -13,15 +13,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class SliderActivityActivity extends AppCompatActivity
+public class SliderActivityActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-
-
-
-     implements NavigationView.OnNavigationItemSelectedListener{
-    
-
+    Button buttonMontag2;
 
 
     @Override
@@ -29,6 +25,16 @@ public class SliderActivityActivity extends AppCompatActivity
             super.onCreate(savedInstanceState);
             setContentView(R.layout.slider_activity);
 
+
+        buttonMontag2 = (Button) findViewById(R.id.buttonMontag2);
+
+        buttonMontag2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SliderActivityActivity.this, StundeZuweisen.class);
+                startActivity(intent);
+            }
+        });
 
 
 

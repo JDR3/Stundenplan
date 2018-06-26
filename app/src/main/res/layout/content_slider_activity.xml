@@ -16,7 +16,8 @@
         <TextView
             android:id="@+id/textViewMontag"
             android:layout_width="60dp"
-            android:text="@string/montag" />
+            android:text="@string/montag"
+            android:clickable="true"/>
 
         <TextView
             android:id="@+id/textViewDienstag"

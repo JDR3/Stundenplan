@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textViewfachauswaehlen"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Fach auswählen:"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinnerFaecher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textViewfachauswaehlen"
+        android:layout_toEndOf="@+id/textViewfachauswaehlen"
+        android:spinnerMode="dropdown">
+
+    </Spinner>
+
+    <TextView
+        android:id="@+id/textViewlehrerauswaehlen"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewfachauswaehlen"
+        android:padding="10dp"
+        android:text="Lehrer auswählen:"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinnerLehrer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="67dp"
+        android:layout_toEndOf="@+id/textViewfachauswaehlen"
+        android:spinnerMode="dropdown"></Spinner>
+
+    <TextView
+        android:id="@+id/textViewRaumauswaehlen"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewlehrerauswaehlen"
+        android:padding="10dp"
+        android:text="Raum auswählen:"
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/spinnerRaum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="109dp"
+        android:layout_toEndOf="@+id/textViewfachauswaehlen"
+        android:spinnerMode="dropdown"></Spinner>
+
+
+
+
+
+</RelativeLayout>

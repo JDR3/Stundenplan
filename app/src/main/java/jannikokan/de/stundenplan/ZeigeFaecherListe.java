@@ -60,7 +60,6 @@ public class ZeigeFaecherListe extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
 
                         res.moveToPosition(position);
-// myDb.loescheFach(res.getString(1));
                         myDb.loescheFach(res.getLong(0));
 
                         Toast.makeText(getApplicationContext(), faecherListe.get(position) + " gelöscht.", Toast.LENGTH_LONG).show();

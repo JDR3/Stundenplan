@@ -4,9 +4,13 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 
@@ -23,6 +27,7 @@ public class StundeZuweisen extends AppCompatActivity {
     ArrayAdapter<String> faecherAdapter;
     ArrayAdapter<String> lehrerAdapter;
     ArrayAdapter<String> raumAdapter;
+    Toast itemToast;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,9 +47,27 @@ public class StundeZuweisen extends AppCompatActivity {
         raumAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, raumListe);
 
 
+
+
         zeigeSpinnerFaecher();
         zeigeSpinnerLehrer();
         zeigeSpinnerRaum();
+
+        fachSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "Item:" + faecherListe.get(position), Toast.LENGTH_LONG).show();
+
+                /*res.moveToPosition(position);
+                myDb.speichereFachNr(res.getLong(res.getColumnIndex(DatabaseHelper.FACH_ID)));*/
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
     }
 
     public void zeigeSpinnerFaecher(){
@@ -88,6 +111,7 @@ public class StundeZuweisen extends AppCompatActivity {
         raumSpinner.setAdapter(raumAdapter);
 
     }
+
 
     }
 
